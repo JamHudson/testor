@@ -17,6 +17,8 @@ int main()
 
     while (true)
     {
+        dot.set_horizontal_scale(1);
+        dot.set_vertical_scale(1);
         if (bn::keypad::left_held())
         {
             dot.set_x(dot.x() - speed);
@@ -28,10 +30,14 @@ int main()
         if (bn::keypad::up_held())
         {
             dot.set_y(dot.y() - speed);
+            dot.set_vertical_scale(0.75);
+            dot.set_horizontal_scale(1.25);
         }
         if (bn::keypad::down_held())
         {
             dot.set_y(dot.y() + speed);
+            dot.set_vertical_scale(1.25);
+            dot.set_horizontal_scale(0.75);
         }
         bn::core::update();
     }
